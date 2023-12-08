@@ -1,1 +1,1 @@
-# triton-fashionvae
+# Fashion VAE Triton Performance Example
