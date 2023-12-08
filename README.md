@@ -2,7 +2,7 @@
 <picture><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png" alt="Purdue Logo" width=200></picture>
 </p>
 <p style="font-size:40px;" align=center>
-Fasion MNIST 
+Triton Fashion MNIST Example 
 </p>
 
 ![Purdue](https://img.shields.io/badge/Purdue-University-cfb991?style=for-the-badge) 
@@ -11,13 +11,10 @@ Fasion MNIST
 ![Python](https://img.shields.io/badge/-Python-cfb991?logo=python&logoColor=white&style=for-the-badge)
 
 
-<p style="font-size:30px;" align=center>
-Fashion MNIST
-</p>
 
 
 ## Installation
 
-    git clone https://github.com/btrainwilson/fashionmnist.git
-    cd ./mcmc
+    git clone https://github.com/btrainwilson/triton-fashionvae.git
+    cd ./triton-fashionvae
     python -m pip install -e .
