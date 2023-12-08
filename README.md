@@ -18,3 +18,14 @@ Triton Fashion MNIST Example
     git clone https://github.com/btrainwilson/triton-fashionvae.git
     cd ./triton-fashionvae
     python -m pip install -e .
+
+## Usage
+
+In this repo, we train a simple VAE on FashionMNIST, deploy it to a Triton server, and interface it with localhost front end. 
+
+### Step 0: Setup
+Install triton-model-analyzer, 
+
+### Step 1: Training 
+
+

@@ -9,7 +9,7 @@ def read(filename):
 
 
 setup(
-    name='fashion-vae',
+    name='triton_fvae',
     version='0.0.1',
     author='Blake Wilson',
     author_email='wilso692@purdue.edu',
