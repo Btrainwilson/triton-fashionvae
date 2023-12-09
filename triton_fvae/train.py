@@ -1,4 +1,4 @@
-from . import dataset
+from . import dataset, model
 from torch.utils.data import DataLoader
 import torch
 import time
@@ -20,7 +20,7 @@ def train_loop(batch_size,
                             pin_memory=pin_memory)
   start_time = time.time()
 
-  model = triton_fvae.model.VAE(latent_dim=50).to(device)
+  model = model.VAE(latent_dim=50).to(device)
 
   optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
