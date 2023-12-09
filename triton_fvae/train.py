@@ -32,7 +32,7 @@ def train_loop(batch_size,
           x = x.to(device)
           x_reconst, mu, log_var = model(x)
 
-          recon_loss, kl_div = vae_loss(x_reconst.flatten(start_dim=1), x, mu, log_var)
+          recon_loss, kl_div = fashion_models.vae_loss(x_reconst.flatten(start_dim=1), x, mu, log_var)
 
           optimizer.zero_grad()
           (recon_loss + kl_div).backward()
