@@ -1,4 +1,8 @@
-import triton_fvae
+from . import dataset
+from torch.utils.data import DataLoader
+import torch
+import time
+
 def train_loop(batch_size,
                lr,
                device,
@@ -8,7 +12,7 @@ def train_loop(batch_size,
                benchmark = False
                ):
   torch.backends.cudnn.benchmark = benchmark
-  train_data, test_data = triton_fvae.dataset.download_fashion_mnist()
+  train_data, test_data = dataset.download_fashion_mnist()
   train_loader = DataLoader(dataset=train_data,
                             batch_size=batch_size,
                             shuffle=True,
