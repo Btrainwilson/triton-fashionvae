@@ -10,7 +10,8 @@ def train_loop(batch_size,
                epochs=10,
                num_workers=0,
                pin_memory=False,
-               benchmark = False
+               benchmark = False,
+               latent_dim = 2,
                ):
   torch.backends.cudnn.benchmark = benchmark
   train_data, test_data = dataset.download_fashion_mnist()
@@ -21,7 +22,7 @@ def train_loop(batch_size,
                             pin_memory=pin_memory)
   start_time = time.time()
 
-  model = fashion_models.VAE(latent_dim=50).to(device)
+  model = fashion_models.VAE(latent_dim=latent_dim).to(device)
 
   optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 

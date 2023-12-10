@@ -1,11 +1,21 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Fashion MNIST VAE</title>
-  </head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position on Canvas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    <h1>Fashion MNIST VAE</h1>
-    <p></p>
+    <h1>Triton-hosted Fashion MNIST</h1>
+    <canvas id="myCanvas"></canvas>
+    <p id="mousePosition">Mouse Position: (x, y)</p>
+    <script src="js/script.js"></script>
+    <p>Click on the canvas to draw a fashionMNIST image.</p>
+    <p>Press the "Predict" button to predict the image.</p>
+
+    <button id="predict">Predict</button>
+    <p id="prediction">Prediction: </p>
 </body>
 </html>
+

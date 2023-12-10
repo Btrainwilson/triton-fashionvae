@@ -1,0 +1,523 @@
+/*
+ * I add this to html files generated with pandoc.
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: decimal;
+}
+li {
+  margin: 0.2em 0em;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  font-size: 12pt;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-family: Noto Sans, Helvetica, sans-serif;
+  text-align: left;
+}
+
+body {
+  color: #000;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto;
+  max-width: 80em;
+  background: #fefefe;
+  text-align: left;
+}
+
+a {
+  color: #449;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #449;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:active {
+  color: #faa700;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+*::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+*::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+p {
+  margin: 0.0em 0em;
+  line-height: 125%;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+font-weight:bold;
+text-align:left;
+margin-top:.5em;
+margin-bottom:1em;
+border-bottom: 1px solid #ddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  line-height: 100%;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+
+h2 {
+  color: #444;
+  border-bottom: 1px solid #ddd;
+
+}
+
+h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  margin-left: 1.5em;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2.125em;
+}
+
+h2 {
+  font-size: 1.875em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.0em;
+}
+
+h5 {
+  font-size: 10pt;
+}
+
+h6 {
+  font-size: 10pt;
+}
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+  margin-left : 0.2em;
+  padding: 0.0em 0 0 0.1em;
+  line-height: 125%;
+}
+
+ul li {
+  margin-left: 0.0em;
+  padding-left: 1.2em;
+  list-style-type: disc;
+  list-style-position: inside;
+  text-align: left;
+}
+
+li p:last-child {
+  margin-bottom: 0;
+  margin-left : 1em;
+}
+
+ul ul, ol ol {
+  margin: .1em 0.2em;
+}
+
+dl {
+  margin-bottom: 0.0em;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 0.0em;
+}
+
+dd {
+  margin: 0 0 .8em .1em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+figure img {
+  border: none;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-style: italic;
+  margin: 0 0 .8em;
+}
+
+ table {
+  width: 100%;
+  margin-bottom: .1em;
+  border-bottom: 0px solid #ddd;
+  border-right: 0px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+ p{
+  margin-left: 0.5em;
+  line-height: 155%;
+}
+
+ table th {
+  text-align: left;
+  margin-top: 0;
+  font-size: 1.0em;
+}
+
+ table td {
+  padding: .0em 0.5em;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-top: 0px solid #ddd;
+  border-left: 0px solid #ddd;
+  vertical-align: top;
+}
+
+ table tbody tr td:first-child {
+  margin-left: 1.0em;
+  font-size: 1.2em;
+  width: 50%;
+  font-weight: bold;
+}
+
+ table tbody tr td:nth-child(2) {
+  width: 30%;
+  text-align: left;
+}
+
+ table tbody tr td:nth-child(3) {
+  width: 10%;
+  text-align: left;
+  font-style: italic;
+}
+
+ table tbody tr td:nth-child(4) {
+  width: 20%;
+  text-align: right;
+
+}
+
+
+.experience table {
+  width: 100%;
+  margin-bottom: .1em;
+  margin-left: 0.2em;
+  border-bottom: 0px solid #ddd;
+  border-right: 0px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 0.0em;
+}
+
+.experience p{
+  margin-left: 0.5em;
+  line-height: 155%;
+}
+
+.experience table th {
+  text-align: left;
+  margin-top: 0;
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+.experience table td {
+  padding: .0em 0.5em;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-top: 0px solid #ddd;
+  border-left: 0px solid #ddd;
+  vertical-align: top;
+}
+
+.experience table tbody tr td:first-child {
+  margin-left: 1.0em;
+  font-size: 1.2em;
+  width: 50%;
+  font-weight: bold;
+}
+
+.experience table tbody tr td:nth-child(2) {
+  width: 30%;
+  text-align: left;
+}
+
+.experience table tbody tr td:nth-child(3) {
+  width: 10%;
+  text-align: left;
+  font-style: italic;
+}
+
+.experience table tbody tr td:nth-child(4) {
+  width: 10%;
+  text-align: right;
+
+}
+.info table {
+  margin-top: 0em;
+  font-weight: normal;
+}
+
+.info table tbody tr:nth-child(even) td {
+  padding-left: 2.5em;
+  font-weight: normal;
+}
+
+.info table tbody tr:nth-child(odd) td {
+  padding-left: 1.5em;
+  font-weight: normal;
+}
+
+
+
+.experience table tbody tr td:first-child {
+  width: 50%;
+  font-weight: normal;
+}
+
+.experience table tbody tr td:nth-child(2) {
+  width: 30%;
+  font-style: italic;
+  
+}
+
+.experience table tbody tr td:nth-child(3) {
+  width: 20%;
+  text-align: right;
+}
+
+.banner-table {
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    margin: 0 auto;
+}
+
+.banner-table img {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;  /* Space between icon and text */
+    margin-bottom: 3px;
+}
+.banner-table td {
+  text-align: center;
+}
+.banner-table td:first-child {
+    width: auto;
+}
+.banner-table td:nth-child(2) {
+    width: auto;
+    font-style: normal;
+  text-align: center;
+}
+.banner-table td:nth-child(3) {
+    width: auto;
+}
+
+.banner-table p{
+}
+
+table th .contact {
+  padding: .2em 0.5em;
+  padding-left: 0;
+  border-top: 0px solid #ddd;
+  border-left: 0px solid #ddd;
+}
+
+table td .contact {
+  padding: .2em 0.5em;
+  margin-right: 10px;
+  border-top: 0px solid #ddd;
+  border-left: 0px solid #ddd;
+  vertical-align: top;
+}
+
+.author {
+  text-align: center;
+}
+
+.nav-table {
+  border-bottom: 1px solid #ddd;
+
+}
+
+.nav-table table tr td a {
+  vertical-align: center;
+}
+.nav-table table tr td:nth-child(1){
+  font-size: 2em;
+  width:90%;
+  vertical-align: middle;
+  font-style: normal;
+}
+
+.nav-table table tr td:nth-child(2){
+  width:5%;
+  vertical-align: middle;
+  font-style: normal;
+}
+.nav-table table tr td:nth-child(3){
+  width:5%;
+  vertical-align: middle;
+  font-style: normal;
+}
+
+
