@@ -23,8 +23,8 @@ class VAE(nn.Module):
         self.fc_logvar = nn.Linear(128, latent_dim)
 
         # Decoder
-        self.decoder_fc = nn.Linear(latent_dim, 32 * 7 * 7)
         self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, 32 * 7 * 7),
             nn.Unflatten(1, (32, 7, 7)),
             nn.ConvTranspose2d(32, 16, kernel_size=3, stride=2, padding=1, output_padding=1),
             nn.ReLU(),
@@ -42,7 +42,7 @@ class VAE(nn.Module):
         mu = self.fc_mu(encoded)
         logvar = self.fc_logvar(encoded)
         z = self.reparameterize(mu, logvar)
-        decoded = self.decoder(self.decoder_fc(z))
+        decoded = self.decoder(z)
         return decoded, mu, logvar
 
 def vae_loss(x_reconst, x, mu, log_var):
