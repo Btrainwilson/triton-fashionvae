@@ -8,13 +8,25 @@ class VAE(nn.Module):
 
         # Encoder
         self.encoder = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=3, stride=2, padding=1),  # Output: 16 x 14 x 14
-            nn.BatchNorm2d(16),
-            nn.ReLU(),
-            nn.Conv2d(16, 32, kernel_size=3, stride=2, padding=1, bias=bias),  # Output: 32 x 7 x 7
+            # Input: 1 x 28 x 28
+            nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1),  # Output: 32 x 28 x 28
             nn.BatchNorm2d(32),
-            nn.Flatten(),
-            nn.Linear(32 * 7 * 7, 128),
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2),  # Output: 32 x 14 x 14
+
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),  # Output: 64 x 14 x 14
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2),  # Output: 64 x 7 x 7
+
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),  # Output: 128 x 7 x 7
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+
+            nn.Flatten(),  # Flatten the output for the linear layer
+            nn.Linear(128 * 7 * 7, 256),
+            nn.ReLU(),
+            nn.Linear(256, 128),
             nn.ReLU()
         )
 
@@ -25,6 +37,9 @@ class VAE(nn.Module):
         # Decoder
         self.decoder = nn.Sequential(
             nn.Linear(latent_dim, 32 * 7 * 7),
+            nn.ReLU(),
+            nn.Linear(32 * 7 * 7, 32 * 7 * 7),
+            nn.ReLU(),
             nn.Unflatten(1, (32, 7, 7)),
             nn.ConvTranspose2d(32, 16, kernel_size=3, stride=2, padding=1, output_padding=1),
             nn.ReLU(),

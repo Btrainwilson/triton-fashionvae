@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Triton-hosted Fashion MNIST</h1>
-    <canvas id="myCanvas"></canvas>
-    <p id="mousePosition">Mouse Position: (x, y)</p>
-    <script src="js/script.js"></script>
-    <p>Click on the canvas to draw a fashionMNIST image.</p>
-    <p>Press the "Predict" button to predict the image.</p>
-
-    <button id="predict">Predict</button>
-    <p id="prediction">Prediction: </p>
+    <h1>Fashion MNIST</h1>
+    <div>
+      <canvas id="myCanvas"></canvas>
+      <p id="mousePosition">Mouse Position: (x, y)</p>
+      <script src="js/script.js"></script>
+    </div>
+    <table>
+      <tr> 
+        <td>
+          <img src="./icons/Triton-Inference-Server.png" alt="Triton Inference Server" width="auto" height="200"> 
+        </td>
+        <td>
+          <img src="./icons/aws.png" alt="Triton Inference Server" width="100" height="auto">
+        </td>
+      </tr>
+    </table>
 </body>
 </html>
 
